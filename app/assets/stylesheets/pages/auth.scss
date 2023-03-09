@@ -1,0 +1,50 @@
+@import "../ui/button.scss";
+@import "../ui/input.scss";
+@import "../ui/texts.scss";
+@import "../ui/container.scss";
+
+@import "../breakpoints.scss";
+
+.auth-page-container {
+  margin: 0 auto;
+  width: 100%;
+  @include min-desktop {
+    max-width: 50%;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.checkbox {
+    flex-direction: row;
+    .label {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.actions .button {
+  margin-top: 1rem;
+  @include min-desktop {
+    max-width: 120px;
+  }
+}
+
+.auth-page.text-links {
+  font-size: 1rem;
+  font-weight: 400;
+  color: $blue-primary;
+  text-decoration: none;
+  &:visited {
+    color: $blue-primary;
+  }
+}
+
+.auth-page.action-links {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}

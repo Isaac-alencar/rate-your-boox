@@ -1,1 +1,24 @@
 // Entry point for your Sass build
+@import "./theme.scss";
+@import "./pages/auth.scss";
+@import "./pages/home.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace, sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $text-primary;
+  background-color: $background;
+}
+
+a {
+  text-decoration: none;
+}

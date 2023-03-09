@@ -1,0 +1,39 @@
+@import "../ui/button.scss";
+@import "../ui/texts.scss";
+@import "../breakpoints.scss";
+
+.home-page.container {
+  padding: unset;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include min-desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.home-page.welcoming {
+  padding: 1rem;
+}
+
+.home-page.actions {
+  margin: 2rem 0;
+}
+
+.home-page.bg-cover-container {
+  height: 40vh;
+
+  & .bg-cover-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include min-desktop {
+    height: 100vh;
+    width: 50%;
+  }
+}
