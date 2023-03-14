@@ -1,0 +1,90 @@
+@use "../breakpoints.scss";
+
+.profile-page.container {
+  padding: 0;
+  margin: 0;
+
+  & .profile-page__header {
+    width: 100%;
+    height: 15vh;
+    background-color: $light-blue;
+
+    .profile-page__inner-cover {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      @include min-desktop {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .profile-page__profile-picture {
+      position: absolute;
+      top: 100%;
+      left: 5%;
+      transform: translate(0%, -50%);
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 3rem;
+      max-width: 90px;
+      max-height: 90px;
+      border-radius: 50%;
+      font-size: 2.8rem;
+      color: $white;
+      background-color: $dark-blue;
+
+      span {
+        display: block;
+      }
+
+      @include min-desktop {
+        left: 0;
+      }
+    }
+  }
+
+  & .profile-page__info-section {
+    margin: 6rem 1.5rem;
+
+    .info-section__name {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      color: $text-secondary;
+      span {
+        font-size: 0.9rem;
+      }
+    }
+
+    .info-section__bio {
+      
+      span {
+        color: $slate-black;
+        font-size: 0.8rem;
+        max-width: fit-content;
+      }
+
+      @include min-desktop {
+        max-width: calc(100% - 65%);
+        text-align: justify;
+      }
+    }
+
+    @include min-desktop {
+      max-width: 80%;
+      margin: 4rem auto;
+    }
+  }
+
+  & .profile-page__comments {
+    margin: 6rem 1.5rem;
+
+    @include min-desktop {
+      max-width: 80%;
+      margin: 4rem auto;
+    }
+  }
+}

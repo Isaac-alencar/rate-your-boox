@@ -1,3 +1,24 @@
-<h1 class="heading">
-  Welcome, <%= current_user.username %>
-</h1>
+<div class="profile-page container">
+  <header class="profile-page__header">
+    <div class="profile-page__inner-cover">
+      <div class="profile-page__profile-picture">
+        <span><%= current_user.username.slice(0).upcase %></span>
+      </div>
+    </div>
+  </header>
+  <section class="profile-page__info-section">
+    <h2><%= current_user.username %></h2>
+    <div class="info-section__name">
+      <span>Isaac Alencar</span>
+    </div>
+    <div class="info-section__bio">
+      <span>
+        Eu tenho uma bio muito legal, toda vez que estou prestes a escrever algo
+        pra por nela, é muito comum eu esquecer, pq a mente faz isso mesmo
+      </span>
+    </div>
+  </section>
+  <section class="profile-page__comments">
+    <h2>Comments</h2>
+  </section>
+</div>
