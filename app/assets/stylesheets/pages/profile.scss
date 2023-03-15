@@ -60,7 +60,6 @@
     }
 
     .info-section__bio {
-      
       span {
         color: $slate-black;
         font-size: 0.8rem;
@@ -86,5 +85,67 @@
       max-width: 80%;
       margin: 4rem auto;
     }
+
+    .comments__list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 1rem;
+
+      .comments__item {
+        display: flex;
+        gap: 1rem;
+        list-style-type: none;
+        position: relative;
+        background-color: $light-blue;
+        padding: 1rem;
+
+        .item__commenter-avatar {
+
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+
+          padding: 1rem;
+          max-width: 24px;
+          max-height: 24px;
+          border-radius: 50%;
+          font-size: 1rem;
+          color: $white;
+          background-color: $dark-blue;
+
+          span {
+            display: block;
+          }
+        }
+        .item__content {
+          font-size: 0.7rem;
+          line-height: 1;
+          color: $slate-black;
+        }
+      }
+
+      @include min-desktop {
+        max-width: 50%;
+      }
+    }
+
+
+    .comments__form {
+      width: 100%;
+      margin-top: 1rem;
+
+      .comments__textarea.input {
+        height: 5rem;
+      }
+
+      @include min-desktop {
+        width: 50%;
+        .comments__form.button {
+          width: fit-content;
+        }
+      }
+    }
+
   }
 }
