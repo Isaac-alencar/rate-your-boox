@@ -6,4 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments, as: :commentable
+
+  validates :username, presence: true,
+                       uniqueness: true,
+                       length: { minimum: 3, maximum: 15 }
 end
