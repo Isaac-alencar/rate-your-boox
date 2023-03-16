@@ -3,7 +3,7 @@
 # CreateAuthorsTable
 class CreateAuthorsTable < ActiveRecord::Migration[7.0]
   def change
-    create_table :authors_tables do |t|
+    create_table :authors do |t|
       t.string :name, null: false
       t.date :birthdate
       t.string :also_known_as, array: true

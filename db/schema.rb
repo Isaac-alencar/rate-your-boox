@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_15_175618) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_172832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authors_tables", force: :cascade do |t|
+  create_table "authors", force: :cascade do |t|
     t.string "name", null: false
     t.date "birthdate"
     t.string "also_known_as", array: true
@@ -22,13 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_175618) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "books_tables", force: :cascade do |t|
+  create_table "books", force: :cascade do |t|
     t.string "title", null: false
     t.date "release_date"
-    t.bigint "authors_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["authors_id"], name: "index_books_tables_on_authors_id"
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -48,14 +48,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_175618) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", limit: 15, default: "", null: false
+    t.string "username", limit: 15, null: false
     t.string "first_name"
     t.string "last_name"
-    t.datetime "birthdate"
+    t.date "birthdate"
     t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "books", "authors"
 end
