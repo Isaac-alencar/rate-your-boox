@@ -5,6 +5,7 @@
   margin: 0;
 
   & .profile-page__header {
+    display: flex;
     width: 100%;
     height: 15vh;
     background-color: $light-blue;
@@ -47,8 +48,38 @@
     }
   }
 
+  & .profile_page__user-settings {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem 1.5rem 0;
+
+    @include min-desktop {
+      max-width: 80%;
+      margin: 4rem auto;
+    }
+
+    .user-settings__personal-info.button.secondary {
+      max-width: fit-content;
+    }
+
+    .sign-out.button {
+      align-content: center;
+      max-width: 120px;
+      color: $danger;
+      background-color: transparent;
+      border: 1px solid $danger;
+
+      transition: background-color, color 150ms ease-in;
+      &:hover {
+        background-color: $danger;
+        color: $white;
+      }
+    }
+  }
+
   & .profile-page__info-section {
-    margin: 6rem 1.5rem;
+    margin: 2rem 1.5rem;
 
     .info-section__name {
       margin-top: 0.5rem;
@@ -79,7 +110,7 @@
   }
 
   & .profile-page__comments {
-    margin: 6rem 1.5rem;
+    margin: 3rem 1.5rem;
 
     @include min-desktop {
       max-width: 80%;

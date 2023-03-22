@@ -6,16 +6,21 @@
       </div>
     </div>
   </header>
+  <div class="profile_page__user-settings">
+    <%= link_to 'Update profile',
+                   edit_user_path(current_user.username),
+                   class: "user-settings__personal-info button secondary" %>
+    <%= button_to 'Sign out', destroy_user_session_path, class: 'sign-out button', method: :delete %>
+  </div>
   <section class="profile-page__info-section">
     <h2><%= current_user.username %></h2>
     <div class="info-section__name">
-      <span>Isaac Alencar</span>
+      <span>
+        <%= current_user.first_name %> <%= current_user.last_name %>
+      </span>
     </div>
     <div class="info-section__bio">
-      <span>
-        Eu tenho uma bio muito legal, toda vez que estou prestes a escrever algo
-        pra por nela, é muito comum eu esquecer, pq a mente faz isso mesmo
-      </span>
+      <span><%= current_user.bio %></span>
     </div>
   </section>
   <section class="profile-page__comments">
