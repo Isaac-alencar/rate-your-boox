@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   def show; end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find_by(username: params[:username])
   end
 
   def update
-    @user = User.find(current_user.id)
+    @user = User.find(params[:username])
 
     if @user.update(update_user_params)
       redirect_to action: :show
