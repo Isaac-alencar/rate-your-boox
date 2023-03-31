@@ -1,0 +1,10 @@
+.link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: $dark-blue;
+
+  &:visited,
+  &:hover {
+    color: $blue-primary;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Add a new book to the library</h2>
+  <%= form_with model: @author do |form| %>
+    <div class="field">
+      <%= form.label :name, class: 'label' %>
+      <%= form.text_field :name, autofocus: true, class: 'input' %>
+    </div>
+    <div class="field">
+      <%= form.label :birthdate, class: 'label' %>
+      <div class="data-select">
+        <%= form.date_select :birthdate,
+                              autofocus: true,
+                              html: { class: 'select' },
+                              start_year: Date.today.year - 100,
+                              end_year: Date.today.year - 18 %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= form.submit "Submit", class: 'button' %>
+    </div>
+  <% end %>
+</div>

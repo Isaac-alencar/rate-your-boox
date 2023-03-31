@@ -7,10 +7,12 @@
     </div>
   </header>
   <div class="profile_page__user-settings">
+    <%# TODO - Replace it with icons %>
     <%= link_to 'Update profile',
                    edit_user_path(current_user.username),
                    class: "user-settings__personal-info button secondary" %>
     <%= button_to 'Sign out', destroy_user_session_path, class: 'sign-out button', method: :delete %>
+    <%= link_to 'Add book', new_book_path, class: "user-settings__personal-info button secondary" %>
   </div>
   <section class="profile-page__info-section">
     <h2><%= current_user.username %></h2>
