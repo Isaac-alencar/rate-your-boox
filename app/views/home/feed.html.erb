@@ -1,5 +1,6 @@
 <div class="container">
   <h2 class="heading">Welcome to the our community library!</h2>
+  <%= link_to 'My profile', user_path(current_user.username) ,class: 'button secondary' %>
   <div class="feed-container">
     <% @books.each do |book| %>
       <article class="book">
@@ -8,7 +9,9 @@
           <p class="book-info author-name"><%= book.author.name %></p>
           <span class="body-text"><%= book.release_date %></span>
         </div>
+        <%= link_to 'Check the review for this book', book_path(book), class: 'link' %>
       </article>
     <% end %>
   </div>
+  <%= paginate @books %>
 </div>

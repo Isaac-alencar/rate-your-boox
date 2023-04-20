@@ -7,6 +7,6 @@ class HomeController < ApplicationController
   def index; end
 
   def feed
-    @books = Book.all.joins(:author)
+    @books = Book.joins(:author).page params[:page]
   end
 end
