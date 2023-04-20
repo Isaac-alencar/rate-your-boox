@@ -3,6 +3,7 @@
 # Book
 class Book < ApplicationRecord
   belongs_to :author
+  has_many :rating
   has_many :comments, as: :commentable
 
   accepts_nested_attributes_for :author

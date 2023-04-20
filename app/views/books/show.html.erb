@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="book-page-container">
+    <h1 class="heading"><%= @book.title %></h1>
+    <p class="book-info author-name"><%= @book.author.name %></p>
+    <span class="body-text"><%= @book.release_date %></span>
+  </div>
+  <div class="book-page rating">
+    <p>Rating: <%= rating.nil? ? 'No score available' : @book_avarage_rating %></p>
+  </div>
+  <div class="book-page reviews">
+    <% @book_reviews.each do |review| %>
+      <strong class=""><%= review.title %></strong>
+      <p><%= review.description %></p>
+    <% end %>
+  </div>
+</div>

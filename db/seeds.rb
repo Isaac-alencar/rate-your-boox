@@ -9,3 +9,5 @@
 FactoryBot.create_list(:user, 10)
 FactoryBot.create_list(:author, 5)
 FactoryBot.create_list(:book, 5)
+FactoryBot.create_list(:rating, 5)
+FactoryBot.create_list(:review, 5)

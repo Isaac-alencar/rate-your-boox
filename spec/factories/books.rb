@@ -5,10 +5,10 @@ FactoryBot.define do
   factory :book do
     title { Faker::Book.title }
     release_date { Faker::Date.birthday }
-    association :author
+    author
   end
 
-  trait :ivalid_book do
+  trait :invalid_book do
     title { nil }
   end
 end

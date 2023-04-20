@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/feed', to: 'home#feed'
   resources :users, only: %i[show edit update], param: :username
   resources :authors, only: %i[edit update new create]
-  resources :books, only: %i[edit update new create]
+  resources :books, only: %i[show edit update new create]
 end

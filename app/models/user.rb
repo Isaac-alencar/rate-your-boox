@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments, as: :commentable
+  has_many :rating
 
   validates :username, presence: true,
                        uniqueness: true,

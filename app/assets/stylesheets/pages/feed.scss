@@ -2,6 +2,15 @@
   margin: 2rem 0;
 }
 
+.container > .button.secondary {
+  max-width: 150px;
+  margin: 1rem 0;
+}
+
+.feed-container .link {
+  margin: 1rem 0;
+}
+
 .book {
   margin: 1rem 0;
   background-color: $light-blue;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_16_172832) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_03_203453) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_172832) do
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "score"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_ratings_on_book_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "attribuition"
+    t.bigint "rating_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rating_id"], name: "index_reviews_on_rating_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,4 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_172832) do
   end
 
   add_foreign_key "books", "authors"
+  add_foreign_key "ratings", "books"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "reviews", "ratings"
 end

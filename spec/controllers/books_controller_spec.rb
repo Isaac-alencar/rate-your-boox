@@ -6,7 +6,6 @@ require 'rails_helper'
 RSpec.describe BooksController, type: 'request' do
   let(:user) { create :user }
   let(:author) { create :author }
-  let(:book) { build(:book, author_id: author.id).attributes }
 
   describe 'GET /books/new' do
     context 'when the user is succesfully logged in' do
@@ -29,6 +28,8 @@ RSpec.describe BooksController, type: 'request' do
 
   describe 'POST /books' do
     context 'when params are valid' do
+      let(:book) { build(:book, author_id: author.id).attributes }
+
       it 'successfully peform the request' do
         sign_in user
         create_book_params = { book: }
