@@ -7,7 +7,7 @@
     </div>
     <div class="field">
       <%= form.label :author, class: 'label' %>
-      <%= form.select :author_id, @authors.all.collect {|a| [ a.name, a.id ] } %>
+      <%= form.select(:author_id, @authors.all.collect {|a| [ a.name, a.id ] }, {}, { class: 'select' }) %>
       <%= link_to 'Haven\'t found the author name? try adding to the library too!',
                   new_author_path(return_to: new_book_path),
                   class: 'book_form link'
@@ -17,10 +17,11 @@
       <%= form.label :release_date, class: 'label' %>
       <div class="data-select">
         <%= form.date_select :release_date,
-                              autofocus: true,
-                              html: { class: 'select' },
+                              { autofocus: true,
                               start_year: Date.today.year - 100,
-                              end_year: Date.today.year - 18 %>
+                              end_year: Date.today.year - 18 },
+                              { class: 'select' }
+                              %>
       </div>
     </div>
     <div class="actions">

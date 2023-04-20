@@ -1,6 +1,6 @@
 // Entry point for your Sass build
 @import "./theme.scss";
-@import "./ui/link.scss";
+@import "./components.scss";
 @import "./pages/auth.scss";
 @import "./pages/home.scss";
 @import "./pages/profile.scss";
@@ -21,8 +21,8 @@ html {
 }
 
 body {
-  color: $text-primary;
-  background-color: $background;
+  color: $background;
+  background-color: $black;
 }
 
 a {

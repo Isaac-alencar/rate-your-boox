@@ -3,7 +3,7 @@
   <%= link_to 'My profile', user_path(current_user.username) ,class: 'button secondary' %>
   <div class="feed-container">
     <% @books.each do |book| %>
-      <article class="book">
+      <article class="book-card">
         <div class="book-info-container">
           <strong class="book-info title"><%= book.title %></strong>
           <p class="book-info author-name"><%= book.author.name %></p>

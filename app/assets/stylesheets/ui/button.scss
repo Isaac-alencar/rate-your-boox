@@ -4,7 +4,6 @@
   justify-content: center;
   border: 0;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
   background-color: $blue-primary;
   color: $white;
   font-weight: 500;
@@ -21,12 +20,12 @@
   }
 
   &.secondary {
-    background-color: $white;
+    background-color: $slate-black;
     color: $blue-primary;
-    border: 1px solid $blue-primary;
+    border: 1px solid $dark-blue;
 
     &:hover {
-      background-color: $blue-primary;
+      background-color: $dark-blue;
       color: $white;
     }
   }

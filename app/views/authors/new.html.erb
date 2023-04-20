@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Add a new book to the library</h2>
+  <h2>Add a new author to the library</h2>
   <%= form_with model: @author do |form| %>
     <div class="field">
       <%= form.label :name, class: 'label' %>
@@ -9,10 +9,11 @@
       <%= form.label :birthdate, class: 'label' %>
       <div class="data-select">
         <%= form.date_select :birthdate,
-                              autofocus: true,
-                              html: { class: 'select' },
+                              { autofocus: true,
                               start_year: Date.today.year - 100,
-                              end_year: Date.today.year - 18 %>
+                              end_year: Date.today.year - 18 },
+                              { class: 'select' }
+                              %>
       </div>
     </div>
     <div class="actions">

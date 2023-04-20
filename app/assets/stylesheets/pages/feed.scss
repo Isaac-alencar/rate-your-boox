@@ -1,3 +1,5 @@
+@use "../ui/link.scss";
+
 .feed-container {
   margin: 2rem 0;
 }
@@ -9,23 +11,4 @@
 
 .feed-container .link {
   margin: 1rem 0;
-}
-
-.book {
-  margin: 1rem 0;
-  background-color: $light-blue;
-  padding: 1rem 0.5rem;
-  cursor: pointer;
-
-  .book-info.title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: $black;
-  }
-
-  .book-info.author-name {
-    font-size: 1rem;
-    font-weight: 400;
-    color: $slate-black;
-  }
 }

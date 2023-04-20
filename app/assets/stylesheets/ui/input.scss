@@ -2,16 +2,17 @@
   width: 100%;
   height: 44px;
   border: 0;
-  background-color: $light-blue;
+  background-color: $slate-black;
   border-bottom: 2px solid $blue-secondary;
   padding-left: 0.2rem;
+  color: $light-blue;
   &:focus {
-    color: $text-primary;
+    color: $light-blue;
   }
 }
 
 .label {
   margin: 1rem 0;
   font-weight: 500;
-  color: $blue-secondary;
+  color: $light-blue;
 }

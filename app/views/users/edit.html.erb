@@ -19,12 +19,13 @@
     </div>
     <div class="field">
       <%= form.label :birthdate, class: 'label' %>
-      <div class="data-select">
-        <%= form.date_select :birthdate, 
-                              autofocus: true, 
-                              html: { class: 'select' },
+      <div class="birth-date-select-container">
+        <%= form.date_select :birthdate,
+                              { autofocus: true, 
                               start_year: Date.today.year - 100,
-                              end_year: Date.today.year - 18 %>
+                              end_year: Date.today.year - 18 },
+                              { class: 'select' }
+                              %>
       </div>
     </div>
     <div class="actions">
