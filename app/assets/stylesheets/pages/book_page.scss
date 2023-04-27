@@ -1,3 +1,5 @@
+@import "../theme.scss";
+
 .container {
   .book-page.rating {
     margin: 1rem 0;
@@ -5,5 +7,31 @@
 
   .book-page.reviews {
     margin-top: 2rem;
+    h2 {
+      margin: 1rem 0;
+    }
+  }
+
+  .book-page.sequence {
+    margin-top: 2rem;
+    a {
+      display: block;
+    }
+  }
+
+  .book-page-container {
+
+    background-color: $slate-black;
+    padding: 1rem;
+
+    p.body-text {
+      span {
+        display: block;
+        color: $white;
+      }
+
+      margin: 1rem 0;
+      color: $gray;
+    }
   }
 }

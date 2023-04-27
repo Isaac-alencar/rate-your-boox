@@ -11,3 +11,6 @@ FactoryBot.create_list(:author, 5)
 FactoryBot.create_list(:book, 5)
 FactoryBot.create_list(:rating, 5)
 FactoryBot.create_list(:review, 5)
+
+# Creating a Book with sequeel
+FactoryBot.create(:book, :with_sequel)

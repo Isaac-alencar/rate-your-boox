@@ -4,9 +4,7 @@
 class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
-    rating = Rating.where(book_id: @book.id)
-
-    @book_avarage_rating = rating.average(:score).round(1)
+    @rating = Rating.where(book_id: @book.id)
     @book_reviews = Review.joins(:rating).where(rating: { book_id: @book.id })
   end
 

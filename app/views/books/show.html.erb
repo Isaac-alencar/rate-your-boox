@@ -3,11 +3,28 @@
     <h1 class="heading"><%= @book.title %></h1>
     <p class="book-info author-name"><%= @book.author.name %></p>
     <span class="body-text"><%= @book.release_date %></span>
-  </div>
-  <div class="book-page rating">
-    <p>Rating: <%= rating.nil? ? 'No score available' : @book_avarage_rating %></p>
+    <p class="body-text">
+      <span>Synopsis:</span>
+      <%= @book.synopsys %>
+    </p>
+    <div class="book-page rating">
+      <p>Rating: <%= book_rating(@rating) %></p>
+    </div>
+    <div class="book-page sequence">
+      <% if !@book.prequel.empty? %>
+        <%= link_to 'Check the previous book of this sequence', 
+                     @book.prequel.first,
+                     class: 'link' %>
+      <% end %>
+      <% if @book.sequence %>
+        <%= link_to 'Check the next book of the sequence', 
+                     @book.sequence, 
+                     class: 'link' %>
+      <% end %>
+    </div>
   </div>
   <div class="book-page reviews">
+    <h2>Check other users opinion on this book</h2>
     <% @book_reviews.each do |review| %>
       <strong class=""><%= review.title %></strong>
       <p><%= review.description %></p>
