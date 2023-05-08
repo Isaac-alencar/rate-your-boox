@@ -50,8 +50,13 @@
       </li>
     </ul>
     <div class="comments__form">
-      <textarea class="comments__textarea input" placeholder="Left a comment on this profile"></textarea>
-      <button type"button" class="comments__form button">Comment</button>
+      <%= form_with do |f|%>
+        <%= f.text_area :comment,
+                        { placeholder: 'Left a comment on this profile', 
+                          class: 'comments__textarea input' }
+                        %>
+        <%= f.submit "Comment", class: 'comments__form button' %>
+      <% end %>
     </div>
   </section>
 </div>

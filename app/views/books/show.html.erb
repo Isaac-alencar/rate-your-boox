@@ -5,15 +5,15 @@
     <span class="body-text"><%= @book.release_date %></span>
     <p class="body-text">
       <span>Synopsis:</span>
-      <%= @book.synopsys %>
+      <%= @book.synopsis %>
     </p>
     <div class="book-page rating">
       <p>Rating: <%= book_rating(@rating) %></p>
     </div>
     <div class="book-page sequence">
-      <% if !@book.prequel.empty? %>
+      <% if !@book.prequels.empty? %>
         <%= link_to 'Check the previous book of this sequence', 
-                     @book.prequel.first,
+                     @book.prequels.first,
                      class: 'link' %>
       <% end %>
       <% if @book.sequence %>

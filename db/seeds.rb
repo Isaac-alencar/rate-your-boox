@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-FactoryBot.create_list(:user, 10)
-FactoryBot.create_list(:author, 5)
-FactoryBot.create_list(:book, 5)
-FactoryBot.create_list(:rating, 5)
-FactoryBot.create_list(:review, 5)
+FactoryBot.create_list(:user, 2)
+FactoryBot.create_list(:book, 10)
 
-# Creating a Book with sequeel
-FactoryBot.create(:book, :with_sequel)
+def create_books
+  # genres = FactoryBot.create_list(:genre, 10)
+  # book_list = 
+
+  # book_list.each { |book| book.secondary_genres = Genre.all.sample }
+end
+
+# create_books

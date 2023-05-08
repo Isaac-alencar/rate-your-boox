@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/feed', to: 'home#feed'
   resources :users, only: %i[show edit update], param: :username
+  resources :comments, only: %i[new create]
   resources :authors, only: %i[edit update new create]
   resources :books, only: %i[show edit update new create]
 end

@@ -4,7 +4,7 @@
 FactoryBot.define do
   factory :book do
     title { Faker::Book.title }
-    synopsys { Faker::Lorem.paragraph }
+    synopsis { Faker::Lorem.paragraph }
     release_date { Faker::Date.birthday }
     author
   end
