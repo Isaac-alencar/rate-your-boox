@@ -2,60 +2,48 @@
   <header class="profile-page__header">
     <div class="profile-page__inner-cover">
       <div class="profile-page__profile-picture">
-        <span><%= current_user.username.slice(0).upcase %></span>
+        <span><%= @user.username.slice(0).upcase %></span>
       </div>
     </div>
   </header>
-  <div class="profile_page__user-settings">
-    <%# TODO - Replace it with icons %>
-    <%= link_to 'Update profile',
+  <% if current_user.id == @user.id %>
+    <div class="profile_page__user-settings">
+      <%# TODO - Replace it with icons %>
+      <%= link_to 'Update profile',
                    edit_user_path(current_user.username),
                    class: "user-settings__personal-info button secondary" %>
-    <%= button_to 'Sign out', destroy_user_session_path, class: 'sign-out button', method: :delete %>
-    <%= link_to 'Add book', new_book_path, class: "user-settings__personal-info button secondary" %>
-  </div>
+      <%= button_to 'Sign out', destroy_user_session_path, class: 'sign-out button', method: :delete %>
+      <%= link_to 'Add book', new_book_path, class: "user-settings__personal-info button secondary" %>
+    </div>
+  <% end %>
   <section class="profile-page__info-section">
-    <h2><%= current_user.username %></h2>
+    <h2><%= @user.username %></h2>
     <div class="info-section__name">
       <span>
-        <%= current_user.first_name %> <%= current_user.last_name %>
+        <%= @user.first_name %> <%= @user.last_name %>
       </span>
     </div>
     <div class="info-section__bio">
-      <span><%= current_user.bio %></span>
+      <span><%= @user.bio %></span>
     </div>
   </section>
   <section class="profile-page__comments">
     <h2>Comments</h2>
     <ul class="comments__list">
-      <li class="comments">
-        <div class="commenter-avatar">
-          A
-        </div>
-        <span class="item__content">
-          Eu tenho um comentário muito legal, toda vez que estou 
-          prestes a escrever alg, é muito comum eu esquecer, 
-          pq a mente faz isso mesmo
-        </span>
-      </li>
-      <li class="comments">
-        <div class="commenter-avatar">
-          A
-        </div>
-        <span class="item__content">
-          Eu tenho um comentário muito legal, toda vez que estou 
-          prestes a escrever alg, é muito comum eu esquecer, 
-          pq a mente faz isso mesmo
-        </span>
-      </li>
+      <% @user.comments.each do |comment| %>
+        <li class="comments">
+          <div class="commenter-avatar">
+            <%= comment.user.username.slice(0).upcase %>
+          </div>
+          <span class="item__content">
+            <%= comment.body %>
+          </span>
+        </li>
+      <% end %>
     </ul>
     <div class="comments__form">
-      <%= form_with do |f|%>
-        <%= f.text_area :comment,
-                        { placeholder: 'Left a comment on this profile', 
-                          class: 'comments__textarea input' }
-                        %>
-        <%= f.submit "Comment", class: 'comments__form button' %>
+      <% if current_user.id != @user.id %>
+        <%= render partial: 'shared/form', locals: { entity: @user } %>
       <% end %>
     </div>
   </section>

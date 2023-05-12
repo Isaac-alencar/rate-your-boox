@@ -8,12 +8,3 @@
 
 FactoryBot.create_list(:user, 2)
 FactoryBot.create_list(:book, 10)
-
-def create_books
-  # genres = FactoryBot.create_list(:genre, 10)
-  # book_list = 
-
-  # book_list.each { |book| book.secondary_genres = Genre.all.sample }
-end
-
-# create_books

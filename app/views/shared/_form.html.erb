@@ -1,0 +1,12 @@
+<%= form_with model: Comment, url: '/comments', action: :create do |f| %>
+  <div class="field">
+    <%= f.text_area :body,
+                        { placeholder: 'Left a comment on this profile', 
+                          class: 'comments__textarea input' }
+                        %>
+  </div>
+  <%= f.hidden_field :commentable_type, value: entity.class.name %>
+  <%= f.hidden_field :commentable_id, value: entity.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Comment", class: 'comments__form button' %>
+<% end %>
